@@ -1,0 +1,273 @@
+#transfers * {
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+}
+
+body,
+.page,
+#transfers {
+	min-height: 100%;
+	height: 100%;
+}
+
+body,
+#transfers > ul {
+	background: #DDD;
+}
+
+#transfers > ul {
+	padding: 50px 0;
+	list-style: none;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+li.torrent {
+	overflow: hidden;
+	position: relative;
+	-webkit-transition: -webkit-transform .5s;
+	/*box-shadow: 0px 0px 8px rgba( 0, 0, 0, 0.25);*/
+}
+
+/*
+li.torrent.minimized {
+	-webkit-transform: scaleY(0);
+}
+*/
+li.torrent > div {
+	padding: 10px;
+	position: relative;
+}
+
+li.torrent .main {
+	z-index: 1;
+	border-width: 0 1px 1px 0;
+	border-style: solid;
+	border-color: #BBB;
+	box-sizing: border-box;
+	box-shadow: 2px 0px 8px rgba( 0, 0, 0, 0.25);
+	background: -webkit-linear-gradient(top, rgb(255,255,255) 0%, rgb(220, 220, 220) 100%);
+}
+
+li.torrent h3 {
+	margin-bottom: 2px;
+}
+
+li.torrent .main > p {
+	font-size: 10px;
+	color: #666;
+}
+
+li.torrent h3,
+li.torrent .main > p {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.percentage-meter {
+	position: relative;
+	display: block;
+	height: 15px;
+	margin: 5px 0;
+	border: 1px solid #ddd;
+	overflow: hidden;
+	border-radius: 2px;
+
+	background: -moz-linear-gradient(top, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.05)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+
+	transition: border-color .5s;
+	-webkit-transition: border-color .5s;
+}
+
+.seeding .percentage-meter { border-color: rgb(0, 128, 0); }
+.downloading .percentage-meter { border-color: rgb(60, 112, 146); }
+.paused .percentage-meter { border-color: #999; }
+
+.percentage-meter .percentage {
+	height: 100%;
+
+	transition: width .5s linear;
+	-webkit-transition: width .5s linear;
+
+	border: 1px solid transparent;
+
+	box-sizing: content-box;
+	top: -1px;
+	left: -1px;
+	position: absolute;
+
+	box-shadow: 0 0 5px rgba( 0, 0, 0, 0.25 );
+
+	transition: 
+		background-color .5s,
+		width .5s;
+
+	-webkit-transition: 
+		background-color .5s,
+		width .5s;
+
+}
+
+.percentage-meter .percentage:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: '';
+	width: 100%;
+	height: 100%;
+	border-radius: inherit;
+
+background: rgb(174,188,191); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(174,188,191,1) 0%, rgba(110,119,116,1) 50%, rgba(10,14,10,1) 51%, rgba(10,8,9,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(174,188,191,1)), color-stop(50%,rgba(110,119,116,1)), color-stop(51%,rgba(10,14,10,1)), color-stop(100%,rgba(10,8,9,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(174,188,191,1) 0%,rgba(110,119,116,1) 50%,rgba(10,14,10,1) 51%,rgba(10,8,9,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(174,188,191,1) 0%,rgba(110,119,116,1) 50%,rgba(10,14,10,1) 51%,rgba(10,8,9,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(174,188,191,1) 0%,rgba(110,119,116,1) 50%,rgba(10,14,10,1) 51%,rgba(10,8,9,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(174,188,191,1) 0%,rgba(110,119,116,1) 50%,rgba(10,14,10,1) 51%,rgba(10,8,9,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aebcbf', endColorstr='#0a0809',GradientType=0 ); /* IE6-9 */
+
+	opacity: 0.35;
+}
+
+.downloading .percentage-meter .percentage {
+	background-color: rgb(51, 173, 219);
+	border-color: rgb(60, 112, 146);
+}
+
+.seeding .percentage-meter .percentage {
+	background-color: rgb(67, 230, 45);
+	border-color: rgb(0, 128, 0);
+}
+
+.paused .percentage-meter .percentage,
+.queued .percentage-meter .percentage {
+	background-color: white;
+	border-color: #999;
+}
+
+.percentage-meter p {
+	position: absolute;
+	top: -1px; /*subtracting parent's border width*/
+	width: 40px;
+	text-align: center;
+	left: 50%;
+	margin-left: -20px;
+	font-weight: bold;
+	font-size: 10px;
+	opacity: 0.5;
+	color: black;
+	line-height: 15px;
+
+	transition: opacity .5s;
+	-webkit-transition: opacity .5s;
+}
+
+.paused .percentage-meter p {
+	opacity: 0.3;
+}
+
+li.torrent .controls {
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgb(143, 143, 143);
+	padding: 10px;
+	color: white;
+	font-weight: bold;
+	line-height: 20px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 8px rgba( 0, 0, 0, 0.25) inset;
+	background-image: url('../img/stripe.png');
+	background-repeat: repeat-x;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+li.torrent .controls .toolbar {
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	height: 32px;
+	margin: 8px auto;
+	max-width: 500px;
+}
+
+li.torrent .controls > h3 {
+	text-align: center;
+}
+
+li.torrent .controls .button {
+	height: 32px;
+	width: 32px;
+	line-height: 32px;
+	font-size: 28px;
+	font-weight: normal;
+	background: none;
+	border: 0;
+	padding: 0;
+	position: relative;
+	-webkit-box-flex: 1;
+}
+
+li.torrent .controls .button.resume:after { content: "\25b6"; }
+li.torrent .controls .button.pause:after { content: "\2389"; }
+li.torrent .controls .button.remove:after { content: "\e729"; }
+li.torrent .controls .button.info:after { content: "\2139"; }
+/*
+li.torrent .controls .loader {
+	top: -100%;
+
+	line-height: 100%;
+	box-sizing: border-box;
+	transition: top .75s;
+	-webkit-transition: top .75s;
+
+	position: absolute;
+	background: rgba(0, 0, 0, 0.75);
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	vertical-align: bottom;
+}
+
+li.torrent .controls.loading .loader {
+	top: 0%;
+}
+
+
+li.torrent .controls .loader p {
+	position: absolute;
+	margin-left: -30px;
+	width: 100px;
+	left: 50%;
+	top: 50%;
+	margin-top: -12px;
+	height: 30px;
+	line-height: 15px;
+	text-align: left;
+}
+
+li.torrent .controls .loader .spinner {
+	background: transparent url('../img/spinner.png') no-repeat center center;
+	background-size: 20px;
+	-webkit-animation: spin 1.5s infinite linear;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 50%;
+	left: 50%;
+	margin-left: -60px;
+	margin-top: -7px;
+}
+*/

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Transmission</title>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<link rel="apple-touch-icon" href="img/webclip-icon.png"/>
+
+	<!-- Stylesheets START-->
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/header-footer.css">
+	<link rel="stylesheet" href="css/transfers.css">
+	<link rel="stylesheet" href="css/notification.css">
+	<link rel="stylesheet" href="css/confirm.css">
+
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Stylesheets END-->
+
+	<!-- Javascripts START-->
+	<script src="js/lib/jquery.js"></script>
+	<script src="js/lib/moment.js"></script>
+	<script src="js/lib/hammer.js"></script>
+	<script src="js/lib/jquery.hammer.js"></script>
+
+	<script src="js/config.js"></script>
+	<script src="js/remote/remote.js"></script>
+	<script src="js/remote/actions.js"></script>
+
+	<script src="js/remote/utils/general.js"></script>
+	<script src="js/remote/utils/torrents.js"></script>
+	<script src="js/remote/utils/requests.js"></script>
+	<script src="js/remote/utils/notification.js"></script>
+	<script src="js/remote/utils/confirm.js"></script>
+	
+	<script src="js/remote/views/general.js"></script>
+	<script src="js/remote/views/transfers.js"></script>
+
+	<script src="js/app.js"></script>
+	<!-- Javascripts END-->
+	</head>
+	<body>
+
+		<div id="transfers" class="page">
+			<div class="header">
+				<div class="button menu" data-action="showMenu" data-tooltip="Set up Transmission remote"></div>
+
+				<div class="spacer"></div>
+
+				<div class="button pause-all" data-action="pauseAll" data-tooltip="Pause all transfers"></div>
+				<div class="divider"></div>
+				<div class="button resume-all" data-action="resumeAll" data-tooltip="Resume all transfers"></div>
+
+				<div class="spacer"></div>
+
+				<div class="button toggle-slow" data-action="toggleSlow" data-tooltip="Toggle slow mode"></div>
+				<div class="divider"></div>
+				<div class="button filter" data-action="filterTorrents" data-tooltip="Filter torrent list"></div>
+			</div>
+			<ul></ul>
+			<div class="footer"></div>
+		</div>
+
+		<div id="settings" class="page">
+		</div>
+
+		<div id="about" class="page">
+		</div>
+
+	</body>
+</html>

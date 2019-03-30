@@ -1,0 +1,109 @@
+.confirm {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	z-index: 5;
+
+	background: white url('../img/stripe.png') repeat-x;
+
+	border-bottom: 1px solid #999;
+
+	color: #666;
+
+	box-shadow:
+		0 0 15px rgba( 0, 0, 0, 0.25 ),
+		0 0 70px rgba(0, 0, 0, 0.3) inset;
+
+	padding: 10px;
+	overflow: hidden;
+}
+
+.confirm.bound {
+	z-index: 0;
+	position: absolute;
+	height: 100%;
+	border-width: 1px 0;
+	text-shadow: none;
+	border-color: #ccc;
+}
+
+.controls .confirm.bound {
+	z-index: 0
+}
+
+.torrent .confirm.bound {
+	padding: 10px;
+}
+
+.confirm .content {
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	margin: 0 auto;
+	max-width: 300px;
+	height: 100%;
+}
+
+.confirm .content li {
+	position: relative;
+	margin: 1px;
+	height: 100%;
+}
+
+.confirm .content li.message {
+	-webkit-box-flex: 1;
+	overflow: hidden;
+	padding: 0 20px;
+}
+
+.confirm .content li.message:before,
+.confirm .content li.message:after {
+	content: '';
+	position: absolute;
+	width: 1.5px;
+	top: 0;
+	height: 100%;
+	background: -webkit-linear-gradient(top, rgba( 0, 0, 0, 0 ) 0%, rgba( 0, 0, 0, .35 ) 50%, rgba( 0, 0, 0, 0 ) 100%);
+}
+
+.confirm .content li.message:before { left: 0; }
+.confirm .content li.message:after { right: 0; }
+
+.confirm.bound .content li.message:before,
+.confirm.bound .content li.message:after {
+	top: 15%;
+	height: 70%;
+}
+
+.confirm .content li.message .vertical-align {
+	position: absolute;
+	height: 100%;
+	display: table;
+}
+
+.confirm .content li.message .vertical-align p {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-weight: bold;
+}
+
+.confirm .content li.button {
+	width: 66px;
+}
+
+
+.confirm .content li.button:after {
+	font-family: entypo;
+	text-align: center;
+	font-size: 32px;
+	line-height: 29px
+}
+
+.confirm.bound .content li.button:after {
+	line-height: 66px;
+}
+
+.confirm .content li.button.approve:after { content: "\2713"; }
+.confirm .content li.button.deny:after { content: "✕"; }

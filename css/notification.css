@@ -1,0 +1,123 @@
+.notification {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	z-index: 5;
+
+	background: white url('../img/stripe.png') repeat-x;
+
+	border-style: solid;
+	border-color: #999;
+	border-width: 0 0 1px 0;
+
+	color: #666;
+
+	box-shadow:
+		0 0 15px rgba( 0, 0, 0, 0.25 ),
+		0 0 70px rgba(0, 0, 0, 0.3) inset;
+
+	padding: 10px;
+	overflow: hidden;
+}
+
+.notification.bound {
+	z-index: 1;
+	position: absolute;
+	height: 100%;
+	border-width: 1px 0;
+	text-shadow: none;
+}
+
+.controls .notification.bound {
+	z-index: 0
+}
+
+.torrent .notification.bound {
+	padding: 26px;
+}
+
+.torrent .notification.bound .icon {
+	top: 26px;
+	left: 26px;
+}
+
+.notification p,
+.notification h3 {
+	padding-left: 40px;
+	width: 100%;
+	height: 15px;
+	line-height: 15px;
+	text-align: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.notification h3 { font-weight: bold }
+
+.notification:after {
+	background: -webkit-linear-gradient(top, rgba(174,188,191,1) 0%,rgba(110,119,116,1) 50%,rgba(10,14,10,1) 51%,rgba(10,8,9,1) 100%);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	content: '';
+
+	opacity: 0.15;
+
+	z-index: 1;
+}
+
+.notification .icon {
+	width: 32px;
+	height: 32px;
+	position: absolute;
+	top: 9px;
+	left: 10px;
+}
+
+.notification .icon:after {
+	font-family: entypo;
+	text-align: center;
+	font-size: 32px;
+	line-height: 32px;
+}
+
+.notification.info {
+	color: white;
+	border-color: rgb(44, 85, 100);
+	background-color: rgb(51, 173, 219);
+}
+
+.notification.error {
+	color: white;
+	border-color: darkRed;
+	background-color: darkRed;
+}
+
+.notification.warning {
+	color: white;
+	border-color: rgb(156, 88, 0);
+	background-color: orange;
+}
+
+.notification.loading {
+	color: #666;
+	border-bottom: 1px solid #999;
+	background-color: white;
+}
+
+.notification.warning .icon { -webkit-animation: pulsate 1.5s infinite ease-in-out; }
+.notification.loading .icon { -webkit-animation: spin 1.5s infinite linear reverse; }
+
+.notification.info .icon:after { content: "\e705"; }
+.notification.warning .icon:after { content: "\26a0"; }
+.notification.error .icon:after { content: "\2716"; }
+.notification.loading .icon:after { content: "\1f504"; padding-left: 2px; }
+
+
+
+

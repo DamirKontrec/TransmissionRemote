@@ -1,0 +1,99 @@
+.header, .footer {
+	z-index: 2;
+	position: fixed;
+	left: 0;
+	width: 100%;
+
+	box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+}
+
+.header {
+	top: 0;
+	height: 50px;
+	border-bottom: 1px solid #AAA;
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+
+	background-image: -webkit-linear-gradient(top, rgba(240,240,240,1) 0%,rgba(210,210,210,1) 100%);
+}
+
+.footer {
+	bottom: 0;
+	height: 25px;
+	border-top: 1px solid #CCC;
+	font-weight: bold;
+	line-height: 25px;
+	text-align: center;
+	color: #666;
+
+	background-color: rgba( 255, 255, 255, 0.9 );
+	background-image: url('../img/stripe.png');
+	background-repeat: repeat-x;
+}
+
+.header .button {
+	position: relative;
+	margin: 4px 10px;
+	height: 42px;
+	width: 42px;
+	line-height: 42px;
+	border-radius: 5px;
+	background-size: 32px;
+	background-position: center;
+	background-repeat: no-repeat;
+	font-size: 28px;
+}
+
+.header .button:after {
+	background: -webkit-linear-gradient(
+		-45deg,
+		rgba(76,76,76,1) 0%,
+		rgba(89,89,89,1) 12%,
+		rgba(102,102,102,1) 25%,
+		rgba(71,71,71,1) 39%,
+		rgba(44,44,44,1) 50%,
+		rgba(0,0,0,1) 51%,
+		rgba(17,17,17,1) 60%,
+		rgba(43,43,43,1) 76%,
+		rgba(28,28,28,1) 91%,
+		rgba(19,19,19,1) 100%
+	);
+
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+	text-shadow:
+		0.5px 0.5px 0.5px rgba(0,0,0,0.35),
+		0px 0px 4px rgba(0, 0, 0, .4);
+		
+	opacity: 0.4;
+}
+
+/*entypo*/
+.header .button.menu:after { content: ""; }
+.header .button.pause-all:after { content: "\2389"; }
+.header .button.resume-all:after { content: "\25b6"; }
+.header .button.toggle-slow:after { content: "\e7a2"; }
+.header .button.filter:after { content: "🔍"; }
+
+.header .button.toggle-slow.toggled:after {
+	opacity: .9;
+
+	background: -webkit-linear-gradient(-45deg, rgba(59,103,158,1) 0%,rgba(43,136,217,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+	text-shadow:
+		0.5px 0.5px 0.5px rgba(59,103,158,1),
+		0px 0px 4px rgba(59,103,158,0.4);
+}
+
+/*fontawesome*/
+/*
+.header .button.pause-all:after { content: "\f04c"; }
+.header .button.resume-all:after { content: "\f04b"; }
+.header .button.settings:after { content: "\f0ad"; }
+.header .button.toggle-slow:after { content: "\f0e4"; }
+*/
+
+
