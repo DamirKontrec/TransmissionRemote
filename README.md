@@ -1,6 +1,6 @@
 ## Transmission remote
 
-A proof of concept web remote client for[ Transmission BitTorrent client](https://transmissionbt.com/), optimized for mobile devices. 
+A proof of concept web remote client for [Transmission BitTorrent client](https://transmissionbt.com/), optimized for mobile devices. 
 
 Example of the app in action:
 
@@ -16,4 +16,4 @@ Since this app is getting a bit long in the tooth, I plan on rewriting it in a m
 
 ### Usage instructions
 
-Put the cloned resources in your Transmission instalation folder, inside the `web` subfolder, and enable remote client in the app itself.
+Put cloned resources in your Transmission installation folder, inside the `web` subfolder, and enable remote client in the app itself.
