@@ -11,6 +11,7 @@ Created long ago (back) in 2013, using:
 Since this app is getting a bit long in the tooth, I plan on rewriting it in a modern JS framework, and implement missing features (such as search, proper torrent deletion, etc.).
 
 Example of the app in action:
+
 ![Video demo](https://github.com/DamirKontrec/TransmissionRemote/raw/master/demo.gif)
 
 ### Usage instructions
